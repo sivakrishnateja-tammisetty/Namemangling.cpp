@@ -1,0 +1,21 @@
+* Name Mangling : It is a technique used by compilers to encode additional information into variables or functions in compiled code.
+  Name mangling is primarily used to differentiate between functions or variables with the same name but different signatures or contexts.
+
+
+Eg:
+class MyClass {
+public:
+    void myFunction(int x);
+    void myFunction(double x);
+};
+
+int main() {
+    MyClass obj;
+    obj.myFunction(42);
+    obj.myFunction(3.14);
+    return 0;
+}
+
+
+Note:When this code is compiled, the compiler might generate mangled names for the two myFunction methods to differentiate them based on their parameter types. 
+  The actual mangled names would depend on the compiler and platform. In the compiled code, you might see something like _ZN7MyClass11myFunctionEi for the myFunction(int x) method and _ZN7MyClass11myFunctionEd for the myFunction(double x) method.
